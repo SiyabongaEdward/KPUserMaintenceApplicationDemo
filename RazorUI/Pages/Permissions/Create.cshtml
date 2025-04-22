@@ -1,0 +1,22 @@
+﻿@page
+@model RazorUI.Pages.Permissions.CreateModel
+@{
+    ViewData["Title"] = "Create Permission";
+}
+
+<h2>Create Permission</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Permission.Name" class="form-label"></label>
+        <input asp-for="Permission.Name" class="form-control" />
+        <span asp-validation-for="Permission.Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

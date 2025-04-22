@@ -1,0 +1,2 @@
+Sql instance is required.
+Please configure your database settings in the appsettings.json file in the WebAPI directory

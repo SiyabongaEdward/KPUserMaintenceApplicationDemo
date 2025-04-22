@@ -1,0 +1,22 @@
+﻿@page
+@model RazorUI.Pages.UserGroups.CreateModel
+@{
+    ViewData["Title"] = "Assign User to Group";
+}
+
+<h1>Assign User to Group</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="UserGroup.UserId">Name</label>
+        <select asp-for="UserGroup.UserId" asp-items="Model.UserGroup.Users" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserGroup.GroupId">Group Name</label>
+        <select asp-for="UserGroup.GroupId" asp-items="Model.UserGroup.Groups" class="form-control"></select>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Assign</button>
+    <a asp-page="Index" class="btn btn-secondary mt-3">Cancel</a>
+</form>

@@ -1,0 +1,29 @@
+﻿@page
+@model RazorUI.Pages.Groups.IndexModel
+@{
+    ViewData["Title"] = "Groups";
+}
+
+<h2>Groups</h2>
+<a asp-page="Create" class="btn btn-primary">Create New Group</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model.Groups)
+        {
+            <tr>
+                <td>@group.Name</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@group.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="Delete" asp-route-id="@group.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

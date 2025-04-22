@@ -1,0 +1,24 @@
+﻿@page
+@model RazorUI.Pages.Users.CreateModel
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h2>Create User</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="UserDto.FirstName" class="form-label">First Name</label>
+        <input asp-for="UserDto.FirstName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="UserDto.LastName" class="form-label">Last Name</label>
+        <input asp-for="UserDto.LastName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="UserDto.Email" class="form-label">Email</label>
+        <input asp-for="UserDto.Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-page="/Index" class="btn btn-secondary">Cancel</a>
+</form>

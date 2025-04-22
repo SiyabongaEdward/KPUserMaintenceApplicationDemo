@@ -1,0 +1,20 @@
+﻿@page
+@model RazorUI.Pages.GroupPermission.DeleteModel
+@{
+    ViewData["Title"] = "Delete Group Permission";
+}
+
+<h2>Delete Group Permission</h2>
+
+<h4>Are you sure you want to delete this Group Permission?</h4>
+
+<div>
+    <p><strong>Group:</strong> @Model.GroupPermission.GroupName</p>
+    <p><strong>Permission:</strong> @Model.GroupPermission.PermissionName</p>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="GroupPermission.GroupId" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>

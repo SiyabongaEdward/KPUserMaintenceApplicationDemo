@@ -1,0 +1,29 @@
+﻿@page
+@model RazorUI.Pages.GroupPermission.IndexModel
+<h2>Group Permissions</h2>
+
+<a asp-page="Create" class="btn btn-primary mb-3">Add Group Permission</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Group</th>
+            <th>Permission</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GroupPermissions)
+        {
+            <tr>
+                <td>@item.GroupName</td>
+                <td>@item.PermissionName</td>
+                <td>
+                    <form asp-page="Delete" asp-route-groupId="@item.GroupId" asp-route-permissionId="@item.PermissionId" method="post">
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

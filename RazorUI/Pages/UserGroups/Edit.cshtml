@@ -1,0 +1,25 @@
+﻿@page 
+@model RazorUI.Pages.UserGroups.EditModel
+@{
+    ViewData["Title"] = "Edit User Group";
+}
+
+<h1>Edit User Group</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="UserGroup.Id" />
+
+    <div class="form-group">
+        <label asp-for="UserGroup.UserId" class="control-label">User</label>
+        <select asp-for="UserGroup.UserId" class="form-control" asp-items="Model.Users"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserGroup.GroupId" class="control-label">Group</label>
+        <select asp-for="UserGroup.GroupId" class="form-control" asp-items="Model.Groups"></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Save</button>
+    <a asp-page="Index" class="btn btn-secondary mt-3">Cancel</a>
+</form>
+
